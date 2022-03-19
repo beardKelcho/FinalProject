@@ -15,11 +15,21 @@ ProductTest();
 static void ProductTest()
 {
     ProductManager productManager = new ProductManager(new EfPorductDal());
+    var result = productManager.GetProductDetail();
 
-    foreach (var product in productManager.GetProductDetail())
+    if (result.Success == true)
     {
-        Console.WriteLine(product.ProductName + "/" + product.CategoryName);
+
+        foreach (var product in result.Data)
+        {
+            Console.WriteLine(product.ProductName + "/" + product.CategoryName);
+        }
     }
+    else
+    {
+        Console.WriteLine(result.Message);
+    }
+
 }
 
 static void CategoryTest()
