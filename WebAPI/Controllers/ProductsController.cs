@@ -59,11 +59,11 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("delete")]
-        public IActionResult Delete(Product product)
-        {
-            var result = _productService
-        }
+        //[HttpPost("delete")]
+        //public IActionResult Delete(Product product)
+        //{
+        //    var result = _productService
+        //}
         
 
     }
